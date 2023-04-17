@@ -58,6 +58,7 @@ public class WebSocketSessionLoadBalancer implements ReactorServiceInstanceLoadB
         String instancesId = originalUrl.getHost();
         if (webSocketProperties.getService().getName().equals(instancesId)) {
             // 获取需要参与哈希的字段，此项目为 userId
+            //TODO 根据路由键做LB
             final String userIdFromRequest = getUserIdFromRequest(exchange);
             if (null != userIdFromRequest && null != this.serviceInstanceListSupplierProvider) {
                 // 请求参数中有 userId，需要经过哈希环的路由
@@ -110,6 +111,7 @@ public class WebSocketSessionLoadBalancer implements ReactorServiceInstanceLoadB
      * @param exchange 请求上下文
      * @return userId，可能为空
      */
+    //TODO 需要处理成RoomId
     protected static String getUserIdFromRequest(ServerWebExchange exchange) {
         URI originalUrl = (URI) exchange.getAttributes().get(ServerWebExchangeUtils.GATEWAY_REQUEST_URL_ATTR);
         String userId = null;

@@ -10,7 +10,8 @@ spring:
     name:
       gateway-server
   redis:
-    host: 'docker.for.mac.host.internal'
+    host: 'localhost'
+    password: Oasis2020
     port: 6379
   rabbitmq:
     host: 'docker.for.mac.host.internal'
