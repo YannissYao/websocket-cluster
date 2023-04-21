@@ -120,5 +120,5 @@ nacos:
     data-id: pro-global.yml
   server-addr: mse-e1b760d12-nacos-ans.mse.aliyuncs.com
   namespace:
-  access-key: LTAI4GGAJrNf1vS4Ctp2i4PJ
-  secret-key: 8JFOa0RqETJHtvveR3HBBnly124Y34
+  access-key:
+  secret-key:  
