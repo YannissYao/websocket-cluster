@@ -1,0 +1,48 @@
+server:
+  port: 7000
+  max-http-header-size: 10240
+  tomcat:
+    uri-encoding: utf-8
+
+logging:
+  config: classpath:logback-spring.xml
+  level:
+    root: INFO
+    org.springframework: INFO
+    me.yannis.socket: INFO
+  file:
+    path: ./../logs
+
+spring:
+  redis:
+    host: "localhost"
+    password: "Oasis2020"
+    database: 0
+    port: 6379
+    timeout: 60000
+  application:
+    name:
+      gateway-server
+  cloud:
+    nacos:
+      discovery:
+        server-addr: mse-d733b250-p.nacos-ans.mse.aliyuncs.com
+        namespace: e47a316d-9466-4c77-ae96-2969d36b69ae
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: path-route
+          uri: lb://websocket-server
+          predicates:
+            - Path=/websocket/**
+          filters:
+            - StripPrefix=1
+
+rocketmq:
+  accessKey: "LTAI4GBU6eMYvYVGF5SxX7Y1"
+  secretKey: "BaNyoeI4hBqeo1aAWUKXgKz400n352"
+  nameSrvAddr: "http://MQ_INST_1776731713785881_BcWcJltI.mq-internet-access.mq-internet.aliyuncs.com:80"
+

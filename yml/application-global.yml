@@ -1,0 +1,124 @@
+#spring:
+#  redis:
+#    host: r-rj9n5wuxxogqov138e.redis.rds.aliyuncs.com
+#    password: Oasis2020
+#    database: 0
+#    port: 6379
+#  activemq:
+#    broker-url: ssl://b-7a793b4e-69c7-4f26-a288-d78e70886406-1.mq.ap-northeast-1.amazonaws.com:61617
+#    user: oasis
+#    password: Oasis2020dev
+#
+#sharding:
+#  jdbc:
+#    datasource:
+#      names: ds-master,ds-slave-0
+#      ds-master:
+#        type: com.zaxxer.hikari.HikariDataSource
+#        driver-class-name: com.mysql.cj.jdbc.Driver
+#        jdbcUrl: jdbc:mysql://rm-rj95hnf21zqq26ye7.mysql.rds.aliyuncs.com:3306/oasis_world?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+#        username: oasis
+#        password: Oasis2020
+#      ds-slave-0:
+#        type: com.zaxxer.hikari.HikariDataSource
+#        driver-class-name: com.mysql.cj.jdbc.Driver
+#        jdbcUrl: jdbc:mysql://rm-rj95hnf21zqq26ye7.mysql.rds.aliyuncs.com:3306/oasis_world?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+#        username: oasis
+#        password: Oasis2020
+#    config:
+#      masterslave:
+#        load-balance-algorithm-type: round_robin
+#        name: ds-ms
+#        master-data-source-name: ds-master
+#        slave-data-source-names: ds-slave-0
+#      props:
+#        sql:
+#          show: true
+#
+#rocketmq:
+#    accessKey: LTAI4GBU6eMYvYVGF5SxX7Y1
+#    secretKey: BaNyoeI4hBqeo1aAWUKXgKz400n352
+#    nameSrvAddr: http://MQ_INST_1776731713785881_BXQOP36v.us-west-1.mq-internal.aliyuncs.com:8080
+#
+#logging:
+#  config: classpath:logback-spring.xml
+#  path: ./../logs
+#  level:
+#    root: INFO
+#    org.springframework: INFO
+#    cn.paomiantv: INFO
+#
+#oss:
+#  ak: LTAI4FeHfznqotPSsYwCDDiY
+#  sk: CnAntgkR8VfqkH7MGrolV0t4omea0E
+#  endPoint: http://oss-cn-shanghai.aliyuncs.com
+#  logRoot: /usr/local/oasis-log
+#
+#shiro:
+#  issue: world.oasis
+#  secret: ODJnB/TpCPZWn6StKRMrx0PJRriIEoOimSm34eWttEBcVJBKHesNNO7epn8Ow2hYCA==
+#
+#
+#address:
+#  serverNameEn: EN
+#  serverWsUrlEn: wss://s2.oasis.world:9001/api/ws
+#  httpServerUrlEn: http://www.oasis.world:6262/service/
+#  serverUdpUrlListEn: 198.11.183.237:8000,198.11.183.237:8001
+#  serverNameCN: CN
+#  serverWsUrlCn: wss://s1.oasis.world:9001/api/ws
+#  httpServerUrlCn: http://www.oasis.world:6262/service/
+#  serverUdpUrlListCn: s1.oasis.world:5055,s1.oasis.world:5056
+#
+#logstore:
+#  ak: LTAI4FhQRYgMdwYijdiUeejd
+#  sk: uVv4hfmAhvFIN2UBHNEtT3FO9NCO0G
+#  host: cn-shanghai.log.aliyuncs.com
+#  project: oasis-log
+#  logStore: oasis-log-store
+#
+#profile: US
+#
+#comm:
+#  domain: https://s2.oasis.world:9001
+#
+#portal: https://www.oasis.world/
+#
+#forum:
+#  url: jdbc:mysql://172.19.103.248:3306/opensns?useUnicode=true&amp;characterEncoding=utf-8
+#  username: root
+#  password: oneinstack
+#  driver: com.mysql.cj.jdbc.Driver
+#
+#
+#weixin:
+#  pay:
+#    notifyUrl: https://cn.oasis.world/service/order/wx/app-model/callback
+#    sandbox: false
+#    spbill_create_ip: 198.11.181.105
+#  xcx:
+#    appid: wx42e67c1
+#    secret: c8de87a622b04f
+#
+#alipay:
+#  app_id: 2017031
+#  app_private_key: MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCqCi2BeEKI+QnDKy6k5q40rGiUvq3lwZKzM1os7mKRvm4Tk5IHdyJYjvsmU7OhrhfwRcSUK8ZX/m/VSofl/rs9ei+t1L75J61nc+aDJB12weKFkS4b+EllEsE3ljseitgY+BtvhtN1S59I7+2UmcAWF9VFnyg6JTMqF8iWlnBrXUlkHuJuDylCrWimTFrsNIJF24/ori3q/oNDwnXOWg+MWSw+kr3V3owqbDxqynCV/cbG4uAzAyT9LqqSyiFwq9hqD18T0soLusesDKqizZeOWr1eB7yTF4y+AZq5MFMBm4/Zui3dvYhoP/8sepl5995CHBbrzDSnGPhVgYnZya2TAgMBAAECggEAR4LkRHD5OnXR/zyn7z38wbZIfVX7+IaCVc8g+4h99+Fold8YKP+XeDsZsLK+9x4qfyg4VkBauCMPkVo48SdCQ8ahSrAQaOSg7sM1jK2hnpJH2/iEtcqjw1gx3ljWIDAwVb/yeeLwB4J4SMpu1nIa8K+xSAh5eIqwi+FYwMwgF2aBiv2MLLfsp1/gcFpvgaREeO4jNNu7DbnNXFZX5iOjmoKi+tc/1OS/CwsnWYthev+nzV2TJsQF4WOwp26yyqYf0LXmhajCYMGH5qtoOq4cjlqV+wLVNhTHfKr9OAY7FkrooGGsHLyOIx1X/3fVa4ax5zBQHjjuD5BSptnB3LvE0QKBgQDqYBzPLq1gYd/YjL28KQNr9nmUXA8i1IvaGRBqonCq0rt6NSrb7/KWT3IVRRHKHfAeMZNHJ/hlWYq1y6FHGt4LR++lfogWtlJCmG9/JlbahFGTsci/hKpze14Isk53iCSOIoeAAbaSU23+37Zi4tQ7DkguwSsuHDgBjLCUWB/0zwKBgQC5unkVLVMrxCwGbcFfNlRrEAgqOOhiJCr2+0qgjsKuzlOLKVFX1nX7nbEuen8qabOvofxaRUlOvOiAl2Mpa6jiyRchmJFiDFk5tfCpeEfu6YkFNhfdYBGwTzEtuVmSPejHK3IYEzFOnnm8HgexVHfBnOlxekGA6yf6rLAcB3iz/QKBgAvtPioQ3wPDl0eGyfT0RVdOIJu7H44PMNq1Yc97Wq5msOGkKP0uNbMOcejBLgmSAnEW5r69Ove1WcishxV+OYRrcbeDO9ukBYWcCjh3M/5Es34Hkwaj8qSTx5I7uKB+jhWpjimmbKr/kd5hdf+MOW6T6HpwnAjpqLPze9zgqyejAoGAD+dz7uhOsvS9gF9tq6WPXQumZ1cwLxdBxpyGK3GOIkHwzX3gRVFMERvTzFMZCJy8klGgtmoweNmcX0aXaziY4bKulGXoLSk5isOVtC1km4TMAvI64O4VFa/yWiQBE5DRmhySTJV4J29SpVU8+2ZsStwQ8XKyoUOBzOl0uzG4mFECgYEAh0zY49qpQy2R2bQW5zPO3z10j0QjT7JUMFZMFELhcK1KXhR5bCjoI58wS/mDC4tpVkBD46YLMqcbRHsgyN2VjmNcz9ffaNt/3TSmXMErrqmxXsoE+kbpO0nFelHKWwsbQhtfQpUx5+YtL+SF4SA2GT5MliSoJUOruUKbGf8ElYg=
+#  app_public_key: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqgotgXhCiPkJwysupOauNKxolL6t5cGSszNaLO5ikb5uE5OSB3ciWI77JlOzoa4X8EXElCvGV/5v1UqH5f67PXovrdS++SetZ3PmgyQddsHihZEuG/hJZRLBN5Y7HorYGPgbb4bTdUufSO/tlJnAFhfVRZ8oOiUzKhfIlpZwa11JZB7ibg8pQq1opkxa7DSCRduP6K4t6v6DQ8J1zloPjFksPpK91d6MKmw8aspwlf3GxuLgMwMk/S6qksohcKvYag9fE9LKC7rHrAyqos2Xjlq9Xge8kxeMvgGauTBTAZuP2bot3b2IaD//LHqZeffeQhwW68w0pxj4VYGJ2cmtkwIDAQAB
+#  ali_public_key: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnlKYFRSHBOZrgbhZu0bwHSMP+pRk/CX1sq8vWu+jimr76u5L52/VF/4QP7VYXOTFJCqdiFvj+cG0b/0nUR3uTh+ILIWbuTeiDF2RCoVyS8IcQhrUsHnfb+g1knxG749phJ4pL5J6alcH5wLiKfKme0CZ9XLASh0cHWtZYZHAALNI8uD2YmCp6WHN75ox6zCioFblwLf+/XU0zjnD9J1DLxYOgdUwWMe/O0RMHhPs4gLVOKQX56gUrmJivypNoWADN+4BmUu4NvKcLaAbvwKZpEMzMfDe6aeC5IYZAinuBLhIvam/agZ+RVHBnMAgK4BYCCaugwYv4f3uqzQsiLkJbwIDAQAB
+#  ali_gateway: https://openapi.alipay.com/gateway.do
+#  callback_url: https://cn.oasis.world/service/order/alipay/app-model/callback
+#
+#auth:
+#  name: oasis
+#  pwd: lvzhou2018
+#
+#wxim:
+#  appid: 1400454398
+#  secret: f484bb331163698b1b3bfd9994d50bcda7563c67ca334039a219e7988a28849e
+
+nacos:
+  config:
+    data-id: pro-global.yml
+  server-addr: mse-e1b760d12-nacos-ans.mse.aliyuncs.com
+  namespace:
+  access-key: LTAI4GGAJrNf1vS4Ctp2i4PJ
+  secret-key: 8JFOa0RqETJHtvveR3HBBnly124Y34

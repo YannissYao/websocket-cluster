@@ -4,13 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>me.lawrenceli</groupId>
+    <groupId>me.yannis</groupId>
     <artifactId>springcloud-websocket-cluster</artifactId>
     <version>1.0.0</version>
     <modules>
         <module>gateway</module>
         <module>websocket</module>
-        <module>common</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -21,6 +20,8 @@
         <maven.compiler.target>8</maven.compiler.target>
         <sonar.organization>lonor</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+        <oasis.common.version>1.4-SNAPSHOT</oasis.common.version>
+        <nacos.version>2.2.7.RELEASE</nacos.version>
     </properties>
 
     <dependencyManagement>
@@ -39,6 +40,62 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>world.oasis.vr</groupId>
+                <artifactId>oasis-common</artifactId>
+                <version>${oasis.common.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>spring-core</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>spring-context</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>spring-context-support</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>spring-web</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>spring-aspects</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-starter-web</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.elasticsearch.client</groupId>
+                        <artifactId>elasticsearch-rest-high-level-client</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.elasticsearch</groupId>
+                        <artifactId>elasticsearch</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+                <version>${nacos.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>javax.ws.rs</groupId>
+                        <artifactId>jsr311-api</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.springframework.cloud</groupId>
+                        <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
         </dependencies>
     </dependencyManagement>
+
+
 </project>
